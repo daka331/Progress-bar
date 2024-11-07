@@ -1,26 +1,18 @@
-const progressBar = document.querySelector('.progress-bar');
-const progressBarPercent = document.querySelector('.progress-bar-percent');
-const inputItem = document.querySelectorAll('.input-div-item');
-const btn = document.querySelector('.btn');
-
-let sum = 0;
-
+var progressBar = document.querySelector('.progress-bar');
+var progressBarPercent = document.querySelector('.progress-bar-percent');
+var inputItem = document.querySelectorAll('.input-div-item');
+var btn = document.querySelector('.btn');
+var sum = 0;
 btn.addEventListener('click', updateProgressBar);
-
 function updateProgressBar() {
-    for (let item of inputItem) {
+    for (var _i = 0, inputItem_1 = inputItem; _i < inputItem_1.length; _i++) {
+        var item = inputItem_1[_i];
         if (item.value != '') {
-            sum = sum +1;
-        } 
+            sum = sum + 1;
+        }
     }
-    const totalPercents = Math.round(sum / inputItem.length * 100);
-
+    var totalPercents = Math.round(sum / inputItem.length * 100);
     progressBar.style.width = totalPercents + '%';
     progressBarPercent.innerText = totalPercents + '%';
-
-    sum = 0;
+    return sum = 0;
 }
-
-
-
-
